@@ -10,25 +10,25 @@
   <Class Name="Dog">
     <Position X="5.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAgAAAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Source.cpp</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="noseObject" />
       <Field Name="tailObject" />
+      <Field Name="noseObject" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Nose" Collapsed="true">
     <Position X="9.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAgAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tail" Collapsed="true">
     <Position X="1.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Source.cpp</FileName>
     </TypeIdentifier>
   </Class>
