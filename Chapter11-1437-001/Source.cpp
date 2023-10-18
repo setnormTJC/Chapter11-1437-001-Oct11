@@ -20,14 +20,32 @@ using namespace std;
 //
 //};
 
+class Animal
+{
+    string name;
+};
 
+/// <summary>
+/// Tails have isBushy and length (bool and int) 
+/// </summary>
 class Tail
 {
     bool isBushy; 
     int length; 
     //private
 
-public: 
+public:
+    Tail()
+    {
+
+    };
+
+    Tail(bool isBushy, int length)
+        :isBushy(isBushy), length(length)
+    {
+        //Empty!
+    };
+
     void printTailInfo()
     {
         cout << std::boolalpha; 
@@ -35,6 +53,10 @@ public:
     }
 };
 
+
+/// <summary>
+/// Noses have `isPointy` and `length` (bool and int)  
+/// </summary>
 class Nose
 {
     bool isPointy; 
@@ -47,26 +69,55 @@ public:
         cout << "Nose is pointy: " << isPointy << " NOSe length: " << length << " cm " << endl;
     }
 
+    Nose()
+    {
+
+    };
+
+    Nose(bool isPointy, int length)
+        :isPointy(isPointy), length(length)
+    {
+
+    };
+
 };
 
-class Animal
-{
-    string name; 
-};
 
-class Dog : public Animal //This is INHERITANCE 
+class Dog //: public Animal //This is INHERITANCE 
 {
+    int dewClawLength = 1; //cm  
+
     Nose noseObject; //THIS is COMPOSITION!
     Tail tailObject; 
 
-    int dewClawLength = 1; //cm  
+public:
+    Dog() //default constructor (initializes integers to 0 or "garbage values" 
+        //bools get autoinitialized to false
+    {
+    };
 
-public: 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="dClawLength"></param>
+    /// <param name="isP"></param>
+    /// <param name="nLength"></param>
+    /// <param name="isB"></param>
+    /// <param name="tLength"></param>
+    Dog(int dClawLength,
+        bool isP, int nLength,
+        bool isB, int tLength)
+        :noseObject(isP, nLength), tailObject(isB, tLength)
+    {
+        dewClawLength = dClawLength; 
+    }
+
+
     void printDogDetails()
     {
         noseObject.printNoseInfo();
         tailObject.printTailInfo(); 
-        cout << "Dew claw length: " << dewClawLength << " cm " << endl;
+        cout << "Dew claw length: " << dewClawLength << " mm " << endl;
     }
 
 };
@@ -82,6 +133,16 @@ int main()
     Dog someDog{};
 
     someDog.printDogDetails(); 
+
+    cout << "\n\n\n";
+
+    Dog doris{ 13, true, 102, false, 457 };
+    
+    doris.printDogDetails();
+
+    //doris.
+    
+    //myDog.printDogDetails(); 
 
     return 0;
 }
