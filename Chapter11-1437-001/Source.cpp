@@ -1,5 +1,11 @@
 #include <iostream>
 
+#include<Windows.h>
+#include<mmsystem.h>
+
+#pragma comment(lib, "winmm.lib") 
+
+
 using namespace std;
 
 //class Rectangle
@@ -90,6 +96,7 @@ class Dog //: public Animal //This is INHERITANCE
     Nose noseObject; //THIS is COMPOSITION!
     Tail tailObject; 
 
+
 public:
     Dog() //default constructor (initializes integers to 0 or "garbage values" 
         //bools get autoinitialized to false
@@ -120,6 +127,12 @@ public:
         cout << "Dew claw length: " << dewClawLength << " mm " << endl;
     }
 
+    void bark()
+    {
+        PlaySound(TEXT("C:/Users/Work/Downloads/bark.wav"), NULL,
+            SND_FILENAME | SND_SYNC);
+    }
+
 };
 
 int main()
@@ -139,6 +152,8 @@ int main()
     Dog doris{ 13, true, 102, false, 457 };
     
     doris.printDogDetails();
+
+    doris.bark(); 
 
     //doris.
     
